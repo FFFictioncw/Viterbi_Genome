@@ -103,7 +103,7 @@ if __name__ == "__main__":
                 pro_sum[1] = temp[1]
 
 #比较最后的两个state哪个大
-start=int(pro_sum[1]<pro_sum[0])
+start=int(pro_sum[1]>pro_sum[0])
 
 length=len(state[start])
 true_path=[]
@@ -126,7 +126,7 @@ for i in range(1,len(true_path)):
             print('From '+str(j)+' to '+str(i-1)+' is state '+str(true_path[i-1]+1))
             j=i
     if (i==len(true_path)-1):
-        print('From ' + str(j) + ' to ' + str(length+1) + ' is state ' + str(true_path[start] + 1))
+        print('From ' + str(j) + ' to ' + str(length+1) + ' is state ' + str(true_path[len(true_path)-1] + 1))
 
 
 
