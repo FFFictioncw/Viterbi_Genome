@@ -107,18 +107,15 @@ start=int(pro_sum[1]>pro_sum[0])
 
 length=len(state[start])
 true_path=[]
-true_path.append(state[start][length-1])
 
 for i in range(length):
     j=length-i-1
     if  j ==length-1:
         r=state[start][j]
+        true_path.append(r)  # 载入初始值坐标
     else:
         r = state[r][j]
-        true_path.append(state[r][j - 1])
-
-true_path=list(reversed(true_path))
-
+        true_path.append(r)
 j=1
 
 for i in range(1,len(true_path)):
@@ -127,30 +124,4 @@ for i in range(1,len(true_path)):
             j=i
     if (i==len(true_path)-1):
         print('From ' + str(j) + ' to ' + str(length+1) + ' is state ' + str(true_path[len(true_path)-1] + 1))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
